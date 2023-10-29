@@ -7,7 +7,7 @@
     "start": "node ./bin/www | node ./routes/index.route.js",
     "test": "nodemon ./bin/www",
     "predeploy": "node ./bin/www",
-    "deploy": "node ./routes/index.routes.js",
+    "deploy": "node ./routes/index.routes.js"
   },
   "author": "",
   "license": "ISC",
