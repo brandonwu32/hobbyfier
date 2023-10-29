@@ -10,8 +10,14 @@
     <div class ="recommendation-page">
         <div class="left-side">
             <div class = "calendar-info">
-                <h2 class = "day-of-week">sunday</h2>
-                <h3 class = "day">october 29th, 2023</h3>
+                <h2 class = "day-of-week">weekly availability</h2>
+                <ul class="collection">
+                    {% for item in events_formatted %}
+                    <li class="collection-item">
+                      <p>{{ item.start_time }}<strong> - {{ item.summary }}</strong></p>
+                    </li>
+                    {% endfor %}
+                  </ul>
             </div>
         <div class = "event-card1">
             <h2 class = "event-title" id="spotlight-title">title</h2>
@@ -84,6 +90,9 @@
             document.getElementById("spotlight-description").innerHTML = "{{ suggestions.activities[3].description }}";
             document.getElementById("spotlight-extended").innerHTML = "{{ suggestions.activities[3].extended_description }}";
         }
+
+        // document.getElementById("current-date").innerHTML = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]((new Date()).getDay()) + ", " +  ["January", "February", "March", "April", "May", "June", "July", "August", "October", "November", "December"]((new Date()).getMonth()) + " " + (new Date()).getDate()
+
         </script>
 
 </html>

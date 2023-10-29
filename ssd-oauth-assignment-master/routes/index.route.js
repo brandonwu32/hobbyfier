@@ -23,7 +23,7 @@ async function main(activities, schedule) {
     model: "gpt-3.5-turbo-instruct",
     prompt: `Return a json file of EXACTLY 4 (FOUR AND NO MORE THAN FOUR AND NO LESS THAN FOUR) specific fun, non work-related hobby activities that the user might enjoy based on their availability given by ${schedule} and their google calendar events given by ${activities} . For each suggested activity, include a title, start time, end time, brief description, and extended description (including tips or suggestions) of the activity. The events should fall under fitness, film, creativity, food, nature, relaxation, social, or games. The activities should not be location-specific. The json file should contain a list of "activities", and each activity should contain the "title", "start_time" (MM/DD HH:MM AM/PM), "end_time" (MM/DD HH:MM AM/PM), "description", and "extended_description" fields.`,
     max_tokens: 1000,
-    temperature: 0.5,
+    temperature: 0.4,
   }
   )
   console.log(completion);
@@ -104,13 +104,6 @@ router.get('/home', (req, res) => {
                 eventsList.push(events[i])
             }
 
-
-
-
-
-
-
-
             // console.log(rl);
 
             let freeBlocks = []
@@ -172,12 +165,18 @@ router.get('/home', (req, res) => {
 
             console.log(suggestions);
 
+            events_formatted = []
+            for(let i=0; i<events.length; i++){
+                events_formatted.push({"summary": events[i].summary, "start_time": new Date(events[i]['start']['dateTime']).toUTCString()})
+            }
+
             const data = {
                 name: req.session.user.name,
                 displayPicture: req.session.user.displayPicture,
                 id: req.session.user.id,
                 email: req.session.user.email,
                 events: events,
+                events_formatted: events_formatted,
                 suggestions: suggestions
             }
 

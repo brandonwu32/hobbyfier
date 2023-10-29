@@ -100,6 +100,7 @@ html, body {
     padding-left: 10%;
     width: 90%;
     overflow-wrap: break-word;
+    overflow-y: auto;
 }
 
 .top {
@@ -175,6 +176,8 @@ html, body {
     margin-left: 10%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    overflow-y: auto;
+    padding-bottom: -5%;
 }
 
 .view-button {
@@ -194,3 +197,10 @@ html, body {
     font-size: 5pt;
 }
 
+.collection {
+    list-style-type: none;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    text-align: left;
+}
