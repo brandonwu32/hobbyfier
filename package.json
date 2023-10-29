@@ -3,6 +3,6 @@
     "memorystore": "^1.6.7"
   },
   "scripts": {
-    "start": "npm start ./ssd-oauth-assignment-master/app.js"
+    "start": "node start ./ssd-oauth-assignment-master/bin/www.js"
 }
 }
