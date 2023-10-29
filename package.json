@@ -1,5 +1,5 @@
 {
-  "name": "oauth-assignment",
+  "name": "hobbyfier",
   "version": "1.0.0",
   "description": "This Node.js Express server application demonstrate basic Google OAuth2 process to access user's private calendar information. A blog post explaining the basic OAuth2 process can be found [here](https://medium.com/@isuru71/google-calendar-api-with-oauth2-and-node-js-25f17521c1f3).",
   "main": "index.js",
