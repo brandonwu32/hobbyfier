@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "memorystore": "^1.6.7"
-  }
+  },
+  "scripts": {
+    "start": "npm start ./ssd-oauth-assignment-master/app.js"
+}
 }
