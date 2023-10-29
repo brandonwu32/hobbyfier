@@ -1,0 +1,182 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+.recommendation-page {
+    background-color: #F6E7CB;
+    display: flex;
+    height: 100vh;
+}
+
+.event-card1 {
+    background-color: #A9CEF4;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width: 100%;
+}
+
+.event-card {
+    background-color: #A6C48A;;
+    border-radius: 20px;
+    width: 20vw;
+    height: 30vh;
+    margin: 1vw;
+}
+
+.recommendations {
+    background-color: #F6E7CB;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 8%;
+}
+
+.recommendations-card {
+    overflow: wrap;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.recommendations-title {
+    font-family: Cherry;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: -2%;
+}
+.recommendations-title-text {
+    font-family: Cherry;
+    color: #004F2D;
+}
+
+@font-face {
+    font-family: Cherry;
+    src: url(../media/CherryBombOne-Regular.ttf);
+  }
+
+
+.header {
+    font-family: Cherry;
+    font-size: 20pt;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+}
+
+.description-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14pt;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.description {
+    font-size: 14pt;
+}
+
+.day-of-week {
+    font-size: 24pt;
+    font-family: Cherry;
+    text-align: center;
+    padding-top: 5%;
+    color: #EEF8FF;
+}
+
+.day {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20;
+    font-weight: lighter;
+    text-align: center;
+    color: #EEF8FF;
+    margin-top: -2.5vh;
+}
+
+.event-title {
+    font-family: Cherry;
+    font-size: 30pt;
+    color: #33658A;
+    padding-left: 10%;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.event-name {
+    font-size: 25pt;
+    font-family: Cherry;
+}
+
+.event-card-text {
+    padding-left: 10%;
+    font-weight: light;
+    color: #002314;
+}
+
+.time {
+    font-weight: lighter;
+    font-size: 12pt;
+    margin-top: -3vh;
+}
+
+.regenerate-button {
+    margin-top: 2vh;
+    align-self: center;
+    width: 11.5vw;
+    height: 6vh;
+    border-radius: 20px;
+    border: none;
+    background-color: #004F2D;
+    color: #A6C48A;
+    font-family: Cherry;
+    font-size: 18pt;
+}
+
+.regenerate-button:hover {cursor: pointer; background-color: #A6C48A; color: #004F2D}
+
+.left-side {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    margin-right: 7%;
+    height: 95%;
+    align-self: center;
+}
+
+.calendar-info {
+    width: 100%;
+    height: 100%;
+    background-color:#33658A;
+    margin-left: 10%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.view-button {
+    margin-left: 57%;
+    margin-top: 1.5vh;
+    width: 6vw;
+    height: 5vh;
+    border-radius: 20px;
+    border: none;
+    background-color: #A9CEF4;
+    color: #33658A;
+    font-family: Cherry;
+    font-size: 16pt;
+}
+
+.view-button:hover {cursor: pointer; background-color: #33658A; color: #A9CEF4}
+
+.descriptions {
+    font-size: 5pt;
+}

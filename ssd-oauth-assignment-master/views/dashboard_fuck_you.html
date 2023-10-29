@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Starter Template - Materialize</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+
+      <div class="row">
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text" style="padding-bottom: 0 !important">
+              <div class="row" style="margin-bottom: 0 !important">
+                <div class="col">
+                  <img src="{{ displayPicture }}" alt="" class="circle responsive-img" width="90">
+                </div>
+                <div class="col">
+                  <h6>{{ name }}</h6>
+                  <span>{{ email }}</span>
+                  <br>
+                  <span>{{ id }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-action">
+              <a class="right" href="/logout">Logout</a>
+              <a href="#"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="header center orange-text">Primary Calendar</h5>
+      <div class="row center">
+          <h7 class="header col s12 light">Next 10 events in the calendar</h7>
+        </div>
+
+      <div class="row">
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+          <ul class="collection">
+            {% for item in events %}
+            <li class="collection-item">
+              <p>Hello, {{ item.start.dateTime }}<strong> - {{ item.summary }}</strong></p>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer orange">
+    <div class="footer-copyright">
+      <div class="container">
+        Made for Secure Software Development Module, SE4030, SLIIT
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+</body>
+
+</html>

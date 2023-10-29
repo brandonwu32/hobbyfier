@@ -3,7 +3,6 @@ const nunjucks = require('nunjucks');
 const session = require('express-session');
 const indexRouter = require('./routes/index.route');
 
-
 const app = express();
 
 require('dotenv').config()
@@ -16,8 +15,7 @@ nunjucks.configure('views', {
 
 // init static files
 // this files contain css and js for views
-app.use(express.static('public/'))
-
+app.use(express.static('public'))
 
 // express-session config
 app.use(
