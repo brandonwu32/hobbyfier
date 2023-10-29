@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "memorystore": "^1.6.7"
-  },
-  "scripts": {
-    "start": "node start ./ssd-oauth-assignment-master/bin/www.js"
-}
-}
