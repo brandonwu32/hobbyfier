@@ -1,6 +1,6 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
-const session = require('express-session');
+const session = require('cookie-session');
 const indexRouter = require('./routes/index.route');
 
 
