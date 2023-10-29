@@ -1,0 +1,22 @@
+.button-comp {
+    background-color: #A6C48A;
+    border-radius: 15px;
+    border: none;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-top: 2.5%;
+    width: 17%;
+    height: 60%;
+    color: #004F2D;
+}
+
+
+.button-text {
+    font-size: 2rem;
+    font-weight: normal;
+    font-family: Cherry;
+    margin-top: 0%;
+}
+
+.button-comp:hover {cursor: pointer; background-color: #004F2D; color: #A6C48A;}
+

@@ -1,7 +1,9 @@
 import "./RecommendationsPage.css";
+import ItemCard from "../Components/ItemCard.js";
 import React, { useState, useEffect } from "react";
 
 function RecommendationsPage() {
+
     const [data, setdata] = useState({
         name: "",
         age: 0,
@@ -27,16 +29,32 @@ function RecommendationsPage() {
     }, []);
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>React and flask</h1>
-                {/* Calling a data from setdata for showing */}
-                <p>{data.name}</p>
-                <p>{data.age}</p>
-                <p>{data.date}</p>
-                <p>{data.programming}</p>
+        <div className="recommendation-page">
+            <div className = "event-card">
+                <h2>Synchronized Swimming</h2>
+                <div>
+                    <h3>details:</h3><p>synchronized swimming is a fun way to practice swimming with your friends.</p>
+                </div>
+                <div>
+                    <h3>weather:</h3>
+                    <p>you can expect thunderstorms and a category 3 hurricane, which is perfect for outdoor swimming.</p>
+                </div>
+                <div>
+                    <h3>time:</h3>
+                    <p> based on your availability and weather conditions, 3:00 PM is a good time for this activity.</p>
+                </div>
+            </div>
 
-            </header>
+
+            <div className = "recommendations">
+                <div className = "recommendations-title"><h1>recommendations</h1></div>
+
+                <div className = "recommendations-card">
+                    <ItemCard title="bowling" time = "3-4pm" desc = "for some friendly competition" />
+                    <ItemCard title="take a walk" time = "1-2pm" desc = "get your steps in" />
+
+                </div>
+            </div>
         </div>
     );
 }

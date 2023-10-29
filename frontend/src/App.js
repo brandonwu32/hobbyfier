@@ -9,10 +9,12 @@ function App() {
 
     return (
         <Router>
-          <Routes>
-            <Route exact path = "/" element={<HomePage reference="home"/>}/>
-            <Route exact path='/recommendations' element={<RecommendationsPage reference="ref"/>}/>
-          </Routes>
+          <div className = "App">
+            <Routes>
+              <Route exact path = "/" element={<HomePage reference="home"/>}/>
+              <Route exact path='/recommendations' element={<RecommendationsPage reference="ref"/>}/>
+            </Routes>
+          </div>
         </Router>
     );
 }
