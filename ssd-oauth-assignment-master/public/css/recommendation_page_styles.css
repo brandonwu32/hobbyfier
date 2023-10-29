@@ -98,6 +98,8 @@ html, body {
     font-size: 30pt;
     color: #33658A;
     padding-left: 10%;
+    width: 90%;
+    overflow-wrap: break-word;
 }
 
 .top {
@@ -121,9 +123,22 @@ html, body {
     padding-left: 10%;
     font-weight: light;
     color: #002314;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5%;
 }
 
+.event-card-text:hover {cursor: pointer;}
+
 .time {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: lighter;
     font-size: 12pt;
     margin-top: -3vh;
@@ -163,8 +178,8 @@ html, body {
 }
 
 .view-button {
-    margin-left: 57%;
-    margin-top: 1.5vh;
+    align-self: center;
+    bottom: 0%;
     width: 6vw;
     height: 5vh;
     border-radius: 20px;
@@ -175,8 +190,7 @@ html, body {
     font-size: 16pt;
 }
 
-.view-button:hover {cursor: pointer; background-color: #33658A; color: #A9CEF4}
-
 .descriptions {
     font-size: 5pt;
 }
+

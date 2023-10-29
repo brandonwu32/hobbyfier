@@ -16,25 +16,23 @@ map.set("relaxation", 0);
 map.set("social", 0);
 map.set("games", 0);
 
-const openai = new OpenAI({apiKey: "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"});
+const openai = new OpenAI({apiKey: process.env.OPEN_API_KEY});
 
-async function main(activities) {
+async function main(activities, schedule) {
   const completion = await openai.completions.create({
     model: "gpt-3.5-turbo-instruct",
-    prompt: `Classify each entry in the list of google calendar activities into one of 8 categories: fitness, food, film, creativity, nature, relaxation, social, games. Return the response as a String. The list is ${activities}`,
-    max_tokens: 20,
-    temperature: 0,
+    prompt: `Return a json file of EXACTLY 4 (FOUR AND NO MORE THAN FOUR AND NO LESS THAN FOUR) specific fun, non work-related hobby activities that the user might enjoy based on their availability given by ${schedule} and their google calendar events given by ${activities} . For each suggested activity, include a title, start time, end time, brief description, and extended description (including tips or suggestions) of the activity. The events should fall under fitness, film, creativity, food, nature, relaxation, social, or games. The activities should not be location-specific. The json file should contain a list of "activities", and each activity should contain the "title", "start_time" (MM/DD HH:MM AM/PM), "end_time" (MM/DD HH:MM AM/PM), "description", and "extended_description" fields.`,
+    max_tokens: 1000,
+    temperature: 0.5,
   }
   )
+  console.log(completion);
+  let textRes = completion['choices'][0]['text'];
+  let parsedTextRes = JSON.parse(textRes);
 
-  let textRes = completion['choices'][0]['text']
+  return parsedTextRes;
 
-  let aggregate = textRes.trim("").slice(0, -1).split(', ');
-  console.log(aggregate);
-  for (let i = 0; i < aggregate.length; i++) {
-    map.set(aggregate[i], map.get(aggregate[i]) + 1);
-  }
-  console.log(map);
+
 }
 
 
@@ -106,7 +104,7 @@ router.get('/home', (req, res) => {
                 eventsList.push(events[i])
             }
 
-            main(listOfSums);
+
 
 
 
@@ -161,22 +159,35 @@ router.get('/home', (req, res) => {
                     eventType: 'default'
                   }
                 freeBlocks.push(newEvent);
+            }
 
+            let freeBlocksFormatted = []
+            for(let i=0; i<freeBlocks.length; i++){
+                freeBlocksFormatted.push("Free block from " + freeBlocks[i].start.dateTime + " to " + freeBlocks[i].end.dateTime)
             }
 ;
 
+        (async() => {
+            suggestions = await main(listOfSums, freeBlocksFormatted);
 
+            console.log(suggestions);
 
             const data = {
                 name: req.session.user.name,
                 displayPicture: req.session.user.displayPicture,
                 id: req.session.user.id,
                 email: req.session.user.email,
-                events: events
+                events: events,
+                suggestions: suggestions
             }
 
 
             res.render('recommendation_page.html', data);
+        })();
+
+
+
+
         });
 
     } else {
