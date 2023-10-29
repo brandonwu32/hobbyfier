@@ -1,4 +1,3 @@
-import RecommendationsPage from "../views/Recommendations/RecommendationsPage";
 const express = require('express');
 const { google } = require('googleapis');
 const googleUtil = require('../utils/google-util');
@@ -65,8 +64,7 @@ router.get('/home', (req, res) => {
                 email: req.session.user.email,
                 events: events
             }
-            {<RecommendationsPage/>}
-            // res.render('dashboard.html', data);
+            res.render('dashboard.html', data);
         });
 
     } else {
