@@ -60,7 +60,7 @@ const setCookie = async (req, res, next) => {
 
 // redirect uri
 router.get('/auth/success',  setCookie, (req, res) => {
-    res.redirect('/redirect');
+    res.redirect('/home');
 })
 
 // directing page
