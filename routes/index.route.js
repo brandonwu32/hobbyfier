@@ -16,7 +16,7 @@ map.set("relaxation", 0);
 map.set("social", 0);
 map.set("games", 0);
 
-const openai = new OpenAI({apiKey: process.env.OPEN_API_KEY});
+const openai = new OpenAI({apiKey:`${process.env.OPEN_API_KEY}`});
 
 async function main(activities, schedule) {
   const completion = await openai.completions.create({
