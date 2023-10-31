@@ -18,6 +18,8 @@ map.set("games", 0);
 
 const openai = new OpenAI({apiKey:`${process.env.OPEN_API_KEY}`});
 
+const baseUrl = process.env.BASE_URL || "";
+
 async function main(activities, schedule) {
   const completion = await openai.completions.create({
     model: "gpt-3.5-turbo-instruct",
@@ -60,7 +62,7 @@ const setCookie = async (req, res, next) => {
 
 // redirect uri
 router.get('/auth/success',  setCookie, (req, res) => {
-    res.redirect('/redirect');
+    res.redirect(`${baseUrl}`+'/redirect');
 })
 
 // directing page
@@ -70,7 +72,7 @@ router.get('/auth/success',  setCookie, (req, res) => {
  */
 router.get('/redirect', (req, res) => {
     res.render('redirect.html');
-});
+})
 
 // dashboard
 router.get('/home', (req, res) => {
