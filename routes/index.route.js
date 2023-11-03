@@ -41,6 +41,7 @@ async function main(activities, schedule) {
 // default landing route
 router.get('/', (req, res) => {
     res.render('landing_page.html', {'title': 'Application Home'});
+    console.log(baseUrl)
 });
 
 // redirect to authentication uri
